@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <style>
+        .brand {
+            font-size: 25px;
+            ;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            color: #fff;
+            padding: 15px;
+            font-size: 23px;
+        }
+
+        .menu span {
+            padding: 10px;
+        }
+
+        article {
+            text-align: center;
+            margin: 2%;
+            padding: 5px;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .women {
+            background-image: url("../shopping/images/shopping-woman.png");
+            background-size: cover;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .man {
+            background-image: url("../shopping/images/shopping-man.png");
+            background-size: cover;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kids {
+            background-image: url("../shopping/images/shopping-kids.png");
+            background-size: cover;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            width: 160px;
+            background-color: white;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Arial;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        .highlights {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .highlights span {
+            color: red;
+        }
+
+        .highlights p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: gray;
+        }
+
+        .bag-collection-row {
+            text-align: center;
+        }
+
+        .bag-collection-row p {
+            font-size: 15px;
+            color: gray;
+            line-height: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .bag-collection-row h2 {
+            font-size: 35px;
+        }
+
+        .bag-collection-box {
+            display: grid;
+            grid-template-columns: 4fr 8fr;
+            margin: 5%;
+        }
+
+        .bag-collection-image {
+            background-image: url("../shopping/images/shopping-woman.png");
+            background-size: cover;
+            width: 100%;
+            height: 500px;
+        }
+
+        .bag-collection-image h2 {
+            text-align: center;
+            margin-top: 50%;
+            color: #fff;
+            font-size: 35px;
+        }
+
+        .bag-collection-image p {
+            text-align: center;
+            color: #fff;
+            font-size: 35px;
+        }
+
+        .printed-shirts {
+            background-image: url("../shopping/images/shopping-man.png");
+            background-size: cover;
+            width: 100%;
+            height: 500px;
+            margin-left: 5%;
+        }
+
+        .printed-shirts h2 {
+            text-align: left;
+            margin-top: 20%;
+            color: #fff;
+            font-size: 35px;
+        }
+
+        .printed-shirts p {
+            text-align: left;
+            color: #fff;
+            font-size: 35px;
+        }
+
+        .bag-collection-box1 {
+            display: grid;
+            grid-template-columns: 8fr 4fr;
+            margin: 2%;
+        }
+
+        .printed-shirts1 {
+            background-image: url("../shopping/images/shopping-man.png");
+            background-size: cover;
+            width: 92%;
+            height: 500px;
+            margin-left: 3%;
+        }
+
+        .printed-shirts1 h2 {
+            text-align: left;
+            margin-top: 20%;
+            color: #fff;
+            font-size: 35px;
+        }
+
+        .printed-shirts1 p {
+            text-align: left;
+            color: #fff;
+            font-size: 35px;
+        }
+
+        .top-month-sellers-header h2 {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .top-month-sellers-list {
+            text-align: center;
+        }
+
+        .top-month-sellers-list span {
+            margin-right: 1%;
+        }
+
+        .top-month-sellers-card {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            margin: 3%;
+            padding: 1px;
+        }
+
+        .card-body {
+            padding: 5%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .top-month-sellers-card p {
+            color: gray;
+        }
+
+        .full-cover-img {
+            background-image: url("../shopping/images/cover-4.png");
+            background-size: cover;
+            width: 100%;
+            height: 600px;
+        }
+
+        .full-cover-img h3 {
+            margin-left: 50%;
+            font-size: 40px;
+        }
+
+        .full-cover-img button {
+            margin-top: 5%;
+            margin-left: 50%;
+            padding: 1%;
+            width: 13%;
+            font-size: 20px;
+            background-color: black;
+            color: white;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .sunday {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            padding: 50px;
+            border-right: 60px;
+        }
+
+        .footer-section-name {
+            font-size: 20px;
+        }
+
+        div li {
+            margin-right: 60px;
+        }
+
+        .social>span {
+            font-size: 20px;
+            margin: 5px;
+        }
+
+        .footer-heading {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand"> Shopper. </div>
+        <div class="menu">
+            <span>Home</span>
+            <span>Catalog</span>
+            <span>Shop</span>
+            <span>Pages</span>
+            <span>Blog</span>
+            <span>Docs</span>
+        </div>
+        <div class="shortcuts">
+            <span class="bi bi-search"></span>
+            <span class="bi bi-person"></span>
+            <span class="bi bi-heart"></span>
+            <span class="bi bi-cart"></span>
+        </div>
+    </header>
+    <article>
+        <span class="bi bi-lightning-charge">HAPPY HOLIDAY DEALS ON EVERYTHING</span>
+        <span class="bi bi-lightning-charge"></span>
+    </article>
+    <main>
+        <div class="women">
+            <div>
+                <h1>Women</h1>
+                <div class="button">Shop Women <span class="bi bi-chevron-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="man">
+            <div>
+                <h1>Man</h1>
+                <div class="button">Shop Man <span class="bi bi-chevron-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="kids">
+            <div>
+                <h1>Kids</h1>
+                <div class="button">Shop Kids <span class="bi bi-chevron-right"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="highlights">
+        <div>
+            <h4>
+                <span class="bi bi-truck"></span> FREE SHIPPING
+            </h4>
+            <p>From all orders over $100 </p>
+        </div>
+        <div>
+            <h4>
+                <span class="bi bi-truck"></span> FREE RETURNS
+            </h4>
+            <p>Return money within 30 days</p>
+        </div>
+        <div>
+            <h4>
+                <span class="bi bi-truck"></span> SECURE SHOPPING
+            </h4>
+            <p>You're in safe hands</p>
+        </div>
+        <div>
+            <h4>
+                <span class="bi bi-truck"></span> OVER 10,000 STYLES
+            </h4>
+            <p>We have everything you need</p>
+        </div>
+    </div>
+    <hr style="width: 90%;">
+    <!-- bag collection -->
+    <div class="bag-collection">
+        <div class="bag-collection-row">
+            <p>NEW COLLECTION</p>
+            <h2>Best Picks 2019</h2>
+            <p>Appear, dry there darkness they're seas, dry waters thing fly midst. Beast, <br>above fly brought Very
+                green. </p>
+        </div>
+        <div class="bag-collection-box">
+            <div class="bag-collection-image">
+                <h2>Bag Collection</h2>
+                <p>Shop Now <span class="bi bi-arrow-right"></span>
+                </p>
+            </div>
+            <div class="printed-shirts">
+                <h2>Printed men's shirts</h2>
+                <p>Shop Now <span class="bi bi-arrow-right"></span>
+                </p>
+            </div>
+        </div>
+        <div class="bag-collection-box1">
+            <div class="printed-shirts1">
+                <h2>Printed men's shirts</h2>
+                <p>Shop Now <span class="bi bi-arrow-right"></span>
+                </p>
+            </div>
+            <div class="bag-collection-image">
+                <h2>Bag Collection</h2>
+                <p>Shop Now <span class="bi bi-arrow-right"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- bag collection -->
+    <!-- Top month Sellers -->
+    <div class="top-month-sellers">
+        <div class="top-month-sellers-header">
+            <h2>Top month Sellers</h2>
+        </div>
+        <div class="top-month-sellers-list">
+            <span>Women</span>
+            <span>Men</span>
+            <span>Kids</span>
+        </div>
+    </div>
+    <div class="top-month-sellers-card">
+        <div class="card-body">
+            <img src="../shopping/images/top-month-seller-1.png" width="100%">
+            <p>Shoes</p>
+            <h3>Leather mid-heel Sandals</h3>
+            <p>$129.00</p>
+        </div>
+        <div class="card-body">
+            <img src="../shopping/images/top-month-seller-2.png" width="100%">
+            <p>Dresses</p>
+            <h3>Cotton floral print Dress</h3>
+            <p>$40.00</p>
+        </div>
+        <div class="card-body">
+            <img src="../shopping/images/top-month-seller-3.png" width="100%">
+            <p>Shoes</p>
+            <h3>Leather Sneakers</h3>
+            <p>
+                <del>$85.00</del> $85.00
+            </p>
+        </div>
+        <div class="card-body">
+            <img src="../shopping/images/top-month-seller-4.png" width="100%">
+            <p>Tops</p>
+            <h3>Cropped cotton Top</h3>
+            <p>$29.00</p>
+        </div>
+        <div class="card-body">
+            <img src="../shopping/images/top-month-seller-5.png" width="100%">
+            <p>Dresses</p>
+            <h3>Floral print midi Dress</h3>
+            <p>$50.00</p>
+        </div>
+        <div class="card-body">
+            <img src="../shopping/images/top-month-seller-6.png" width="100%">
+            <p>Bags</p>
+            <h3>Suede cross body Bag</h3>
+            <p>
+                <del>$79.00</del> $49.00
+            </p>
+        </div>
+        <div class="card-body">
+            <img src="../shopping/images/top-month-seller-7.png" width="100%">
+            <p>Skirts</p>
+            <h3>Printed A-line Skirt</h3>
+            <p>$79.00</p>
+        </div>
+        <div class="card-body">
+            <img src="../shopping/images/top-month-seller-8.png" width="100%">
+            <p>Shoes</p>
+            <h3>Heel strappy Sandals</h3>
+            <p>$90.00</p>
+        </div>
+    </div>
+    <!-- Top month Sellers -->
+    <!-- full cover image -->
+    <div class="full-cover-img">
+        <h3>Get -50% from <br>Summer Collection </h3>
+        <button>Shop Now <span class="bi bi-arrow-right"></span>
+        </button>
+    </div>
+    <!-- full cover image -->
+    <footer>
+        <div class="sunday">
+            <div class="media">
+                <div class="footer-heading">Shopper.</div>
+                <div class="social">
+                    <span class="bi bi-facebook"></span>
+                    <span class="bi bi-instagram"></span>
+                    <span class="bi bi-youtube"></span>
+                    <span class="bi bi-twitter"></span>
+                </div>
+            </div>
+            <div>
+                <div class="footer-section-name">SUPPORT</div>
+                <ul>
+                    <li>Contact Us</li>
+                    <li>FAQs</li>
+                    <li>Size Guide</li>
+                    <li>Shipping & Returns</li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-section-name">SHOP</div>
+                <ul>
+                    <li>Men's Shopping</li>
+                    <li>Women's Shopping</li>
+                    <li>Kids' Shopping</li>
+                    <li>Discounts</li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-section-name">COMPANY</div>
+                <ul>
+                    <li>our story</li>
+                    <li>career</li>
+                    <li>terms & COnditions</li>
+                    <li>privacy</li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-section-name">CONTACT</div>
+                <ul>
+                    <li>1-202-555-0105 </li>
+                    <li>1-202-555-0106</li>
+                    <li>help@shopper.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
